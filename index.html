@@ -1,0 +1,519 @@
+<title>8/11 岡山しおり — 公文の先生を訪ねて</title>
+<style>
+  :root {
+    --ink: #2a2018;
+    --ink-soft: #6a5c4e;
+    --ink-faint: #7d6e5c;
+    --sand: #f3ebdc;
+    --paper: #fcf8ef;
+    --peach: #a44a40;
+    --muscat: #5e7a2e;
+    --sun: #e8a33c;
+    --blush: #e9a98f;
+    --sun-wash: rgba(232, 163, 60, 0.15);
+    --rule: rgba(42, 32, 24, 0.13);
+    --r: 8px;
+    --fs-micro: 0.85rem;
+    --fs-small: 1.05rem;
+    --fs-body: 1.2rem;
+    --fs-title: 1.35rem;
+    --fs-time: 1.1rem;
+    --fs-h2: 1.55rem;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #efe6d6;
+    --ink-soft: #b7a794;
+    --ink-faint: #9e8e7a;
+    --sand: #201a14;
+    --paper: #2a231b;
+    --peach: #e2937f;
+    --muscat: #b7c97e;
+    --sun: #f0b45c;
+    --blush: #c97a5f;
+    --sun-wash: rgba(240, 184, 92, 0.22);
+    --rule: rgba(239, 230, 214, 0.14);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #efe6d6;
+      --ink-soft: #b7a794;
+      --ink-faint: #9e8e7a;
+      --sand: #201a14;
+      --paper: #2a231b;
+      --peach: #e2937f;
+      --muscat: #b7c97e;
+      --sun: #f0b45c;
+      --blush: #c97a5f;
+      --sun-wash: rgba(240, 184, 92, 0.22);
+      --rule: rgba(239, 230, 214, 0.14);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font: 400 18px/1.75 "Hiragino Kaku Gothic ProN", "YuGothic", "游ゴシック体", "Noto Sans JP", sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(115% 70% at 76% -10%, var(--sun-wash) 0%, transparent 60%),
+      var(--sand);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: clamp(36px, 7vw, 64px) clamp(20px, 5vw, 30px) 90px;
+  }
+
+  header.hero {
+    padding-bottom: clamp(28px, 5vw, 40px);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: clamp(32px, 6vw, 48px);
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: var(--fs-micro);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: var(--ink-faint);
+  }
+
+  h1 {
+    font-family: "YuMincho", "Hiragino Mincho ProN", "游明朝", "Noto Serif JP", serif;
+    font-size: clamp(2.1rem, 6.5vw, 2.75rem);
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+    margin: 0.5em 0 0;
+    font-weight: 600;
+  }
+
+  .sunmark {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 34% 30%, var(--sun), var(--blush));
+    box-shadow: 0 0 0 6px var(--sun-wash);
+    margin: 22px 0 26px;
+  }
+
+  .lede {
+    color: var(--ink-soft);
+    font-size: var(--fs-body);
+    line-height: 1.85;
+    max-width: 46ch;
+    margin: 0 0 24px;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat {
+    padding: 4px 0;
+  }
+
+  .stat + .stat {
+    border-left: 1px solid var(--rule);
+    padding-left: 18px;
+  }
+
+  .stat .k {
+    font-size: var(--fs-micro);
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+  }
+
+  .stat .v {
+    font-family: "YuMincho", "Hiragino Mincho ProN", "游明朝", serif;
+    font-size: var(--fs-title);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    margin-top: 3px;
+    color: var(--peach);
+  }
+
+  section {
+    margin-top: clamp(36px, 7vw, 52px);
+  }
+
+  h2 {
+    font-family: "YuMincho", "Hiragino Mincho ProN", "游明朝", "Noto Serif JP", serif;
+    font-size: var(--fs-h2);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin: 0 0 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    color: var(--ink);
+  }
+
+  h2 .num {
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    font-size: var(--fs-micro);
+    font-weight: 600;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .section-note {
+    color: var(--ink-soft);
+    font-size: var(--fs-small);
+    line-height: 1.75;
+    margin: 0 0 18px;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 4px;
+    bottom: 4px;
+    width: 1px;
+    background: var(--rule);
+  }
+
+  .stop {
+    position: relative;
+    padding: 2px 0 26px;
+  }
+
+  .stop:last-child { padding-bottom: 0; }
+
+  .stop::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 8px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2.5px solid var(--peach);
+  }
+
+  .stop.muscat::before { border-color: var(--muscat); }
+  .stop.move::before { border-color: var(--ink-faint); background: var(--ink-faint); width: 7px; height: 7px; left: -26px; top: 9px; }
+
+  .stop.move .card { background: transparent; border: none; padding: 1px 0; }
+  .stop.move .time { color: var(--ink-faint); }
+  .stop.move .title { font-weight: 500; color: var(--ink-soft); font-size: var(--fs-small); font-family: "Hiragino Kaku Gothic ProN", sans-serif; }
+
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--r);
+    padding: 16px 18px;
+  }
+
+  .time {
+    font-variant-numeric: tabular-nums;
+    font-size: var(--fs-time);
+    font-weight: 600;
+    color: var(--peach);
+    letter-spacing: 0.02em;
+  }
+
+  .title {
+    font-family: "YuMincho", "Hiragino Mincho ProN", "游明朝", serif;
+    font-size: var(--fs-title);
+    font-weight: 600;
+    margin: 3px 0 5px;
+    letter-spacing: 0.005em;
+  }
+
+  .stop.muscat .title::before {
+    content: "";
+    display: inline-block;
+    vertical-align: -2px;
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+    background-color: var(--muscat);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round'%3E%3Cpath d='M12 3.5v3.2'/%3E%3Ccircle cx='8.6' cy='10' r='2.6'/%3E%3Ccircle cx='15.4' cy='10' r='2.6'/%3E%3Ccircle cx='12' cy='15' r='2.6'/%3E%3Ccircle cx='12' cy='20.2' r='2.2'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linecap='round'%3E%3Cpath d='M12 3.5v3.2'/%3E%3Ccircle cx='8.6' cy='10' r='2.6'/%3E%3Ccircle cx='15.4' cy='10' r='2.6'/%3E%3Ccircle cx='12' cy='15' r='2.6'/%3E%3Ccircle cx='12' cy='20.2' r='2.2'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  .desc {
+    color: var(--ink-soft);
+    font-size: var(--fs-small);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .meta {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    font-size: var(--fs-small);
+    color: var(--ink-faint);
+  }
+
+  .meta a { color: var(--ink-faint); text-decoration: none; border-bottom: 1px solid currentColor; opacity: 0.85; }
+  .meta a:hover { color: var(--peach); opacity: 1; }
+
+  .maplink {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 10px;
+    font-size: var(--fs-small);
+    font-weight: 500;
+    color: var(--ink-faint);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+
+  .maplink:hover { color: var(--peach); border-color: var(--peach); }
+
+  .maplink::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    flex: none;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z'/%3E%3Ccircle cx='12' cy='9.5' r='2.4'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z'/%3E%3Ccircle cx='12' cy='9.5' r='2.4'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  .notes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .note {
+    font-size: var(--fs-small);
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .note b { color: var(--ink); font-weight: 600; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: var(--fs-micro);
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .maplink, .meta a { transition: color 150ms ease, border-color 150ms ease; }
+  }
+</style>
+
+<div class="page">
+
+  <header class="hero">
+    <span class="eyebrow">2026年8月11日（火）・日帰り</span>
+    <h1>公文の先生を訪ねて<br>岡山しおり</h1>
+    <div class="sunmark" aria-hidden="true"></div>
+    <p class="lede">千里山でTetsuyaさんをお迎えして車で岡山へ。日生の海鮮ランチ、ヤギ牧場、山陽インター近くの先生のお宅、帰り際のシャインマスカット購入と巡る。帰りは全員で車のまま、Tetsuyaさんを阪急淡路駅で降ろして千里山へ返却。</p>
+
+    <div class="stat-row">
+      <div class="stat">
+        <div class="k">出発</div>
+        <div class="v">08:30</div>
+      </div>
+      <div class="stat">
+        <div class="k">帰着</div>
+        <div class="v">17:51頃</div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span> 往路</h2>
+    <p class="section-note">千里山駅近くのステーションで車を受け取り、Tetsuyaさん・お母さんのお迎えを経て日生へ。高速メインで約2時間。</p>
+    <div class="timeline">
+
+      <div class="stop">
+        <div class="card">
+          <div class="time">08:30</div>
+          <div class="title">千里山駅 カーシェアステーション</div>
+          <p class="desc">車を受け取り、Tetsuyaさんをお迎えして出発。</p>
+        </div>
+      </div>
+
+      <div class="stop move">
+        <div class="card">
+          <div class="time">08:30 → 08:40</div>
+          <div class="title">お母さん宅へ移動（約10分）</div>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="card">
+          <div class="time">08:40 – 08:45</div>
+          <div class="title">お母さんをお迎え</div>
+        </div>
+      </div>
+
+      <div class="stop move">
+        <div class="card">
+          <div class="time">08:45 → 10:45頃</div>
+          <div class="title">日生へ移動（山陽自動車道経由、約2時間）</div>
+          <a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=千里山駅&destination=岡山県備前市日生町日生639-72&travelmode=driving" target="_blank" rel="noopener">Googleマップでルートを見る（千里山駅からの目安）</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span> ランチ：日生</h2>
+    <p class="section-note">日生港すぐの寿司・会席、秀吉へ。到着が開店（11:00）より早いので、少し待ってから入店。</p>
+    <div class="timeline">
+
+      <div class="stop">
+        <div class="card">
+          <div class="time">10:45 到着 → 11:00 – 12:00</div>
+          <div class="title">秀吉（ひなせ味楽宴）</div>
+          <p class="desc">日生港すぐの寿司・会席の店。地魚と牡蠣が名物。営業11:00–21:00（月曜定休、祝日の場合は翌日・8/11は火曜なので営業日）。10:45頃到着し、開店を待って入店。</p>
+          <div class="meta">
+            <span>岡山県備前市日生町日生639-72</span>
+            <span>0869-72-3993</span>
+            <a href="https://tabelog.com/okayama/A3305/A330501/33003179/" target="_blank" rel="noopener">食べログ</a>
+          </div>
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=岡山県備前市日生町日生639-72" target="_blank" rel="noopener">Googleマップで開く</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span> 牧場へ</h2>
+    <p class="section-note">日生からルーラルカプリ農場まで車で約40分。ランチのあと、ヤギとふれあう。</p>
+    <div class="timeline">
+
+      <div class="stop move">
+        <div class="card">
+          <div class="time">12:00 → 12:40頃</div>
+          <div class="title">農場へ移動（約40分）</div>
+          <a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=岡山県備前市日生町日生639-72&destination=岡山県岡山市東区草ケ部1346-1&travelmode=driving" target="_blank" rel="noopener">Googleマップでルートを見る</a>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="card">
+          <div class="time">12:40 – 13:25</div>
+          <div class="title">ルーラルカプリ農場</div>
+          <p class="desc">ヤギに餌やり・ふれあい。滞在目安45分。</p>
+          <div class="meta">
+            <span>岡山県岡山市東区草ケ部1346-1</span>
+          </div>
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=岡山県岡山市東区草ケ部1346-1" target="_blank" rel="noopener">Googleマップで開く</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span> 先生宅と、シャインマスカット</h2>
+    <p class="section-note">農場から山陽IC付近まで車で約10分。訪問のあと、帰り際にシャインマスカットを購入。</p>
+    <div class="timeline">
+
+      <div class="stop move">
+        <div class="card">
+          <div class="time">13:25 → 13:35頃</div>
+          <div class="title">先生宅へ移動（山陽IC付近・約10分）</div>
+          <a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=岡山県岡山市東区草ケ部1346-1&destination=山陽インターチェンジ&travelmode=driving" target="_blank" rel="noopener">Googleマップでルートを見る（山陽ICまでの目安）</a>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="card">
+          <div class="time">13:35 – 15:05</div>
+          <div class="title">公文の先生を訪問</div>
+          <p class="desc">山陽インター（山陽自動車道）近く。滞在は1時間30分を想定。</p>
+        </div>
+      </div>
+
+      <div class="stop muscat">
+        <div class="card">
+          <div class="time">15:05 – 15:35</div>
+          <div class="title">シャインマスカットを購入</div>
+          <p class="desc">先生宅のあと、直売所などで購入。滞在目安30分。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span> 帰り</h2>
+    <p class="section-note">全員で車のまま大阪へ。高速メインで約1時間59分。18:00締切まで26分の余裕。</p>
+    <div class="timeline">
+
+      <div class="stop move">
+        <div class="card">
+          <div class="time">15:35 → 17:34頃</div>
+          <div class="title">阪急淡路駅へ移動（高速メイン・約1時間59分）</div>
+          <a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=山陽インターチェンジ&destination=阪急淡路駅&travelmode=driving" target="_blank" rel="noopener">Googleマップでルートを見る</a>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="card">
+          <div class="time">17:34頃</div>
+          <div class="title">阪急淡路駅でTetsuyaさんを降車</div>
+          <p class="desc">18:00締切まで26分の余裕。かなりタイトなので、当日はナビで渋滞状況をこまめに確認を。</p>
+        </div>
+      </div>
+
+      <div class="stop move">
+        <div class="card">
+          <div class="time">17:34 → 17:51頃</div>
+          <div class="title">千里山駅へ移動（約17分）</div>
+          <a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=阪急淡路駅&destination=千里山駅&travelmode=driving" target="_blank" rel="noopener">Googleマップでルートを見る</a>
+        </div>
+      </div>
+
+      <div class="stop">
+        <div class="card">
+          <div class="time">17:51頃</div>
+          <div class="title">千里山駅 カーシェアステーションへ返却</div>
+          <p class="desc">返却期限を予約内容で事前に確認しておく。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span> 注意点</h2>
+    <div class="notes">
+      <p class="note"><b>カーシェア返却</b>：千里山駅近くの同一ステーションへ返却必須。予約上の返却期限を事前に確認しておく。</p>
+      <p class="note"><b>秀吉</b>：定休日は月曜（祝日の場合は翌日）。8/11は火曜なので営業（11:00–21:00）。</p>
+      <p class="note"><b>所要時間</b>：Googleマップの実測ルートに基づく数字（交通状況により変動）。18:00締切まで26分の余裕しかないため、当日はナビで渋滞状況をこまめに確認を。</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>岡山しおり — 2026.08.11</span>
+    <span>ルーラルカプリ農場・秀吉の情報は公開情報をもとに作成</span>
+  </footer>
+
+</div>
